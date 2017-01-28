@@ -5,7 +5,7 @@
     "node" : "6.3.0"
   },
   "scripts": {
-    "start": "./bin/start.sh",
+    "start": "node main.js",
     "lint": "eslint . --ext js,html --ignore-path .gitignore",
     "test": "npm run lint && polymer test"
   },
