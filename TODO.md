@@ -1,0 +1,4 @@
+- tests
+- check in which browsers it works
+- try ES6
+- add external modules
