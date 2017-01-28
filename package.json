@@ -5,7 +5,7 @@
     "node" : "6.3.0"
   },
   "scripts": {
-    "start": "polyserve -p 8080",
+    "start": "./bin/start.sh",
     "lint": "eslint . --ext js,html --ignore-path .gitignore",
     "test": "npm run lint && polymer test"
   },
