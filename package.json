@@ -1,8 +1,8 @@
 {
   "name": "polymer-starter-kit",
   "license": "BSD-3-Clause",
-  "engines" : {
-    "node" : "6.3.0"
+  "engines": {
+    "node": "6.3.0"
   },
   "scripts": {
     "start": "node main.js",
@@ -11,6 +11,7 @@
     "postinstall": "./node_modules/bower/bin/bower install"
   },
   "dependencies": {
+    "bower": "^1.8.0",
     "polyserve": "^0.15.0"
   },
   "devDependencies": {
