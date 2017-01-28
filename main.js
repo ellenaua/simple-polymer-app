@@ -8,7 +8,7 @@ app.use('/src', express.static('src'));
 // serve bower_components
 app.use('/bower_components', express.static('bower_components'));
 // serve index.html
-app.get('/', function(req, res){
+app.get(/.*/, function(req, res){
   res.sendfile('views/index.html');
 });
 

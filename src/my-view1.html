@@ -10,6 +10,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 <link rel="import" href="../bower_components/polymer/polymer.html">
 <link rel="import" href="shared-styles.html">
+<link rel="import" href="../bower_components/paper-input/paper-input.html">
+<link rel="import" href="../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../bower_components/paper-dialog/paper-dialog.html">
+<link rel="import" href="../bower_components/gold-zip-input/gold-zip-input.html">
 
 <dom-module id="my-view1">
   <template>
@@ -24,14 +28,34 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <div class="card">
       <div class="circle">1</div>
       <h1>View One</h1>
-      <p>Ut labores minimum atomorum pro. Laudem tibique ut has.</p>
-      <p>Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea.Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea.Cu mei vide viris gloriatur, at populo eripuit sit.</p>
+      <h3>Some inputs and paper dialog:</h3>
+
+      <paper-input label="Enter your name" value={{data.name}}></paper-input>
+      <gold-zip-input value={{data.zip}}></gold-zip-input>
+      <paper-button raised on-click="_onSubmit">Submit to see a dialog</paper-button>
+      <paper-dialog id="dialog" with-backdrop>
+        <div>
+          Hello <b>{{data.name}}</b>!
+          How do you do? <br/>
+          Your zip is {{data.zip}}
+        </div>
+      </paper-dialog>
+
     </div>
   </template>
 
   <script>
     Polymer({
       is: 'my-view1',
+      properties: {
+        data: {
+          type: Object,
+          value: {}
+        }
+      },
+      _onSubmit: function(){
+        this.$.dialog.open();
+      }
     });
   </script>
 </dom-module>
